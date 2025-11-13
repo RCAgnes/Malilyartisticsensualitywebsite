@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color Palette */
+  --color-dark-red: #7b0b15;
+  --color-wine-red: #b82030;
+  --color-deep-gray: #1a1a1a;
+  --color-ice-white: #f5f5f5;
+  
+  /* Typography */
+  --font-logo: 'Ballet', cursive;
+  --font-heading: 'Patrick Hand', cursive;
+  --font-body: 'Patrick Hand', cursive;
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Ballet';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ballet/v10/QGYyz_MYZA-HM4NjuGOVnUEXme1I4Xi3C4G-EiAou6Y.woff2) format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'Patrick Hand';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/patrickhand/v23/LDI1apSQOAYtSuYWp8ZhfYeMWcjKm7sp8g.woff2) format('woff2');
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-black text-ice-white;
+    font-family: var(--font-body);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.3;
+    font-weight: 400;
+  }
+
+  h1 {
+    font-size: 4rem;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: 3rem;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.40625rem; /* 25% maior: 1.125 * 1.25 = 1.40625 */
+    line-height: 1.7;
+  }
+
+  .logo-text,
+  .logo-text *,
+  span.logo-text,
+  p.logo-text,
+  h1.logo-text,
+  h2.logo-text,
+  h3.logo-text {
+    font-family: 'Ballet', cursive !important;
+    font-size: 1.75rem; /* 28pt - padrão, mas pode ser sobrescrito por inline styles */
+    color: #b82030 !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+    font-weight: 400 !important;
+  }
+
+  /* Logo dentro de títulos - tamanho flexível */
+  h1 .logo-text,
+  h1 .logo-text * {
+    font-family: 'Ballet', cursive !important;
+    font-weight: 400 !important;
+  }
+
+  h2 .logo-text,
+  h2 .logo-text * {
+    font-family: 'Ballet', cursive !important;
+    font-weight: 400 !important;
+  }
+
+  /* Aumentar textos pequenos em 25% */
+  label, .text-sm {
+    font-size: 1rem !important; /* 0.875 * 1.25 = 1.09375, arredondado para 1 */
+  }
+
+  .text-xs {
+    font-size: 0.875rem !important; /* 0.75 * 1.25 = 0.9375, arredondado para 0.875 */
+  }
+
+  input, textarea, select {
+    font-size: 1.125rem !important;
+  }
+
+  button {
+    font-size: 1.125rem !important;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #b82030 0%, #7b0b15 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Blog post prose styles */
+  .prose h3 {
+    color: #b82030;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose p {
+    margin-bottom: 1.5rem;
+    color: rgba(245, 245, 245, 0.9);
+  }
+
+  .prose strong {
+    color: #b82030;
+  }
+
+  .prose em {
+    color: rgba(245, 245, 245, 0.8);
+  }
+}
